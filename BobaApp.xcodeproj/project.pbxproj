@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		556F3FB421FD75E800C4E10A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FB321FD75E800C4E10A /* AppDelegate.swift */; };
-		556F3FB621FD75E800C4E10A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FB521FD75E800C4E10A /* ViewController.swift */; };
+		556F3FB621FD75E800C4E10A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FB521FD75E800C4E10A /* MapViewController.swift */; };
 		556F3FB921FD75E800C4E10A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556F3FB721FD75E800C4E10A /* Main.storyboard */; };
 		556F3FBB21FD75E900C4E10A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556F3FBA21FD75E900C4E10A /* Assets.xcassets */; };
 		556F3FBE21FD75E900C4E10A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556F3FBC21FD75E900C4E10A /* LaunchScreen.storyboard */; };
 		556F3FC921FD75E900C4E10A /* BobaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FC821FD75E900C4E10A /* BobaAppTests.swift */; };
 		556F3FD421FD75E900C4E10A /* BobaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FD321FD75E900C4E10A /* BobaAppUITests.swift */; };
+		55FD5C1A2233386400DDDA72 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD5C192233386400DDDA72 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		556F3FB021FD75E700C4E10A /* BobaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556F3FB321FD75E800C4E10A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		556F3FB521FD75E800C4E10A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		556F3FB521FD75E800C4E10A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		556F3FB821FD75E800C4E10A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556F3FBA21FD75E900C4E10A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		556F3FBD21FD75E900C4E10A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		556F3FCF21FD75E900C4E10A /* BobaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BobaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		556F3FD321FD75E900C4E10A /* BobaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobaAppUITests.swift; sourceTree = "<group>"; };
 		556F3FD521FD75E900C4E10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FD5C192233386400DDDA72 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				556F3FB321FD75E800C4E10A /* AppDelegate.swift */,
-				556F3FB521FD75E800C4E10A /* ViewController.swift */,
+				556F3FB521FD75E800C4E10A /* MapViewController.swift */,
 				556F3FB721FD75E800C4E10A /* Main.storyboard */,
+				55FD5C192233386400DDDA72 /* PageViewController.swift */,
 				556F3FBA21FD75E900C4E10A /* Assets.xcassets */,
 				556F3FBC21FD75E900C4E10A /* LaunchScreen.storyboard */,
 				556F3FBF21FD75E900C4E10A /* Info.plist */,
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556F3FB621FD75E800C4E10A /* ViewController.swift in Sources */,
+				55FD5C1A2233386400DDDA72 /* PageViewController.swift in Sources */,
+				556F3FB621FD75E800C4E10A /* MapViewController.swift in Sources */,
 				556F3FB421FD75E800C4E10A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
