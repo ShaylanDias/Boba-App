@@ -28,7 +28,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
         super.viewDidLoad()
 
 //        homeModel.getAllEntries()
-        homeModel.getLocation("1234", "test3")
+        homeModel.getLocation("4AVEnueDr", "hi")
         homeModel.delegate = self
         
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)

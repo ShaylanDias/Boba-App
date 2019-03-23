@@ -20,7 +20,8 @@ class HomeModel: NSObject {
     
     func getLocation(_ address:String, _ name:String) {
         // Hit the web service URL
-        let serviceUrl = "http://bobaapp.com/select-locations.php?address=\'" + address + "\'&name=\'" + name + "\'"
+        let serviceUrl = "http://bobaapp.com/select-locations.php?address=" + address + "&name=" + name
+        print(serviceUrl)
         
         // Download the JSON data
         let url = URL(string: serviceUrl)
