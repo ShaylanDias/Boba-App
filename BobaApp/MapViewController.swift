@@ -9,8 +9,10 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelDelegate {
 
+    var homeModel = HomeModel()
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     let defaultLocation = CLLocation(latitude: 37.331888, longitude: -122.029685)
@@ -20,15 +22,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var sushiButton: UIButton!
     @IBOutlet weak var pizzaButton: UIButton!
     var currentCategory: String = "this_should_return_nothing"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Sets initial location to the Apple Campus
-//        centerMapOnLocation(location: defaultLocation)
+//        homeModel.getAllEntries()
+        homeModel.getLocation("1234", "test3")
+        homeModel.delegate = self
         
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
-       
-        
         
         bobaButton.setStyle()
         iceCreamButton.setStyle()
@@ -75,6 +78,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
 
 //        self.mapView.setRegion(region, animated: true)
+    }
+    
+    func itemsDownloaded(locations: [Location]) {
+        print(locations)
     }
     
     @IBAction func bobaPressed(_ sender: Any) {

@@ -14,7 +14,7 @@ if (mysqli_connect_errno())
 }
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM `reviews` WHERE 'address' LIKE $address";
+$sql = "SELECT * FROM `reviews` WHERE 'address' LIKE '$address'";
 
 // Check if there are results
 if ($result = mysqli_query($con, $sql))

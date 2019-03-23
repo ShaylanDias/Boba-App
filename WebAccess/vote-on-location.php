@@ -16,7 +16,7 @@ if (mysqli_connect_errno())
 }
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM Locations WHERE 'Address' LIKE $address";
+$sql = "SELECT * FROM Locations WHERE 'Address' LIKE '$address'";
 
 // Check if there are results
 if ($result = mysqli_query($con, $sql))
@@ -37,10 +37,10 @@ if ($result = mysqli_query($con, $sql))
 	}
 
     if($up = "true") {
-        $sql = "UPDATE `Locations` SET Upvotes = Upvotes + 1 WHERE `Address` LIKE $address";
+        $sql = "UPDATE `Locations` SET Upvotes = Upvotes + 1 WHERE `Address` LIKE '$address'";
         mysqli_query($con, $sql);
     } else if ($up = "false") {
-        $sql = "UPDATE `Locations` SET Downvotes = Downvotes + 1 WHERE `Address` LIKE $address";
+        $sql = "UPDATE `Locations` SET Downvotes = Downvotes + 1 WHERE `Address` LIKE '$address'";
         mysqli_query($con, $sql);
     }
 
