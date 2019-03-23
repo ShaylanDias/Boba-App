@@ -10,10 +10,10 @@ import UIKit
 
 class HomeModel: NSObject {
 
-    func getItems() {
+    func getAllEntries() {
         // Hit the web service URL
         let serviceUrl = "http://bobaapp.com/service.php"
-        
+    /Users/shaylandias/Documents/BobaApp/BobaApp/Popover/README.md
         // Download the JSON data
         let url = URL(string: serviceUrl)
         
@@ -42,7 +42,16 @@ class HomeModel: NSObject {
     }
     
     func parseJson(_ data:Data) {
-        
+        do {
+            let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as! [Any]
+            for each jsonResult in jsonArray {
+                let jsonDict = jsonResult as! [String:String]
+                let loc = Location(name: <#T##String#>, address: <#T##String#>, upvotes: <#T##Int#>, downvotes: <#T##Int#>, reviews: <#T##[String]#>)
+            }
+        }
+        catch {
+            print("Error With JSON Parse")
+        }
     }
     
 }

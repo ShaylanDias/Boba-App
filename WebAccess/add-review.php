@@ -1,5 +1,5 @@
 <?php
-
+// http://www.mydomain.com/index.php?argument1=arg1&argument2=arg2
 $address = $_GET['address'];
 $review = $_GET['review'];
 
@@ -13,8 +13,8 @@ if (mysqli_connect_errno())
 }
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "INSERT INTO table_name VALUES ($address, $review);";
-
+$sql = "INSERT INTO `reviews` VALUES ('$address', '$review', CURRENT_DATE());";
+mysqli_query($con, $sql);
 echo "Review Added";
 
 // Close connections

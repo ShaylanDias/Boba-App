@@ -1,6 +1,8 @@
 <?php
+// http://www.mydomain.com/index.php?argument1=arg1&argument2=arg2
 
 $address = $_GET['address'];
+$name = $_GET['name'];
 
 // Create connection
 $con=mysqli_connect("localhost","bobaappc_dbuser","b0b44pp","bobaappc_WPMXB");
@@ -12,7 +14,7 @@ if (mysqli_connect_errno())
 }
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM Locations WHERE 'Address' LIKE $address";
+$sql = "SELECT * FROM `Locations` WHERE `Address` LIKE $address";
 
 // Check if there are results
 if ($result = mysqli_query($con, $sql))
@@ -32,6 +34,11 @@ if ($result = mysqli_query($con, $sql))
 
 	// Finally, encode the array to JSON and output the results
 	echo json_encode($resultArray);
+}
+else {
+	echo "NoDataFound";
+	$sql = "INSERT INTO `Locations` VALUES('$address', '$name', 100, 0);";
+	mysqli_query($con, $sql);
 }
 
 // Close connections
