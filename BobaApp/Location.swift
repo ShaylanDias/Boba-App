@@ -31,6 +31,30 @@ class Location : CustomStringConvertible {
         self.reviews = reviews
     }
     
+    func getAddress() -> String {
+        return self.address
+    }
+    
+    func getName() -> String {
+        return self.name
+    }
+    
+    func getUpvotes() -> Int {
+        return self.upvotes
+    }
+    
+    func getDownvotes() -> Int {
+        return self.downvotes
+    }
+    
+    func getScore() -> Int {
+        return (self.upvotes - self.downvotes)
+    }
+    
+    func getReviews() -> [String] {
+        return self.reviews
+    }
+    
     public var description: String { return "[\(self.name), \(self.address), \(self.upvotes), \(self.downvotes), \(self.reviews)]" }
 
 }

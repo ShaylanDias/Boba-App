@@ -48,9 +48,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     }
     
     let regionRadius: CLLocationDistance = 1000
+    
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: false)
+    }
+    
+    func getCurrentLocation() -> Location {
+        return self.currentLoc
     }
     
     override func didReceiveMemoryWarning() {
@@ -225,9 +230,7 @@ extension MapViewController: MKMapViewDelegate {
                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: item.placemark.coordinate, addressDictionary:nil))
                 mapItem.name = annoTitle
                 homeModel.getLocation(item.placemark.title!, item.placemark.name!)
-                let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "secondViewController") as! PageViewController
-                self.navigationController?.pushViewController(secondViewController, animated: true)
-                
+                tabBarController?.selectedIndex = 1
 //                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
             }
         }
