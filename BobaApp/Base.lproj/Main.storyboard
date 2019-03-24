@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WzY-yC-dTC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WzY-yC-dTC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="esb-ul-Fqy">
             <objects>
                 <viewController id="w0U-Pr-LNt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jex-g0-Ew8">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="secondViewController" id="jex-g0-Ew8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0T3-cG-yIj">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mapView" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0T3-cG-yIj">
                                 <rect key="frame" x="0.0" y="-24" width="375" height="642"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7le-Jc-45V">
@@ -130,15 +130,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eT9-n8-SER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-873" y="-22"/>
+            <point key="canvasLocation" x="-879" y="-480"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BobaIcon" width="240" height="240"/>
-        <image name="IceCreamIcon" width="240" height="240"/>
-        <image name="PizzaIcon" width="240" height="240"/>
-        <image name="SushiIcon" width="240" height="240"/>
-        <image name="map_pointer" width="48" height="48"/>
+        <image name="BobaIcon" width="120" height="120"/>
+        <image name="IceCreamIcon" width="120" height="120"/>
+        <image name="PizzaIcon" width="120" height="120"/>
+        <image name="SushiIcon" width="120" height="120"/>
+        <image name="map_pointer" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

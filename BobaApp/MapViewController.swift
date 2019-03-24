@@ -22,13 +22,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     @IBOutlet weak var sushiButton: UIButton!
     @IBOutlet weak var pizzaButton: UIButton!
     var currentCategory: String = "this_should_return_nothing"
+    var currentLoc:Location = Location()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        homeModel.getAllEntries()
-        homeModel.getLocation("TestAvenue", "TestShop")
         homeModel.delegate = self
         
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
@@ -67,7 +66,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
         let distance = location.distance(from: previousLocation)
         mapView.showsPointsOfInterest = false
         
-        let searchRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+//        let searchRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         
         if(distance > 40.0)
         {
@@ -85,6 +84,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     }
     
     func locationDownloaded(location: Location) {
+        self.currentLoc = location
         print(location)
     }
     
@@ -167,10 +167,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
 //                    self.mapView.addAnnotation(pinView)
                     self.mapView.addAnnotation(anno);
                     
-                    
-                    
-                    
-                    //                    print("Phone = \(item.phoneNumber)")
                 }
             }
         })
@@ -223,11 +219,16 @@ extension MapViewController: MKMapViewDelegate {
         {
             if item.placemark.coordinate.latitude == pinCoord?.latitude && item.placemark.coordinate.longitude == pinCoord?.longitude
             {
-                print(item.placemark.title!)
+//                print(item.placemark.title!)
+//                print(item.placemark.name!)
                 
                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: item.placemark.coordinate, addressDictionary:nil))
                 mapItem.name = annoTitle
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+                homeModel.getLocation(item.placemark.title!, item.placemark.name!)
+                let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "secondViewController") as! PageViewController
+                self.navigationController?.pushViewController(secondViewController, animated: true)
+                
+//                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
             }
         }
         

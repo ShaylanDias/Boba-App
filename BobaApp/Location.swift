@@ -15,6 +15,10 @@ class Location : CustomStringConvertible {
     var downvotes = 0
     var reviews = [""]
     
+    init() {
+        
+    }
+    
     init(name:String, address:String, upvotes:Int, downvotes:Int, reviews:[String]) {
         self.name = name
         self.address = address
@@ -27,6 +31,6 @@ class Location : CustomStringConvertible {
         self.reviews = reviews
     }
     
-    public var description: String { return self.reviews.description }
+    public var description: String { return "[\(self.name), \(self.address), \(self.upvotes), \(self.downvotes), \(self.reviews)]" }
 
 }
