@@ -28,7 +28,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
         super.viewDidLoad()
 
 //        homeModel.getAllEntries()
-        homeModel.getLocation("4AVEnueDr", "hi")
+        homeModel.getLocation("TestAvenue", "TestShop")
         homeModel.delegate = self
         
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
@@ -82,6 +82,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     
     func itemsDownloaded(locations: [Location]) {
         print(locations)
+    }
+    
+    func locationDownloaded(location: Location) {
+        print(location)
     }
     
     @IBAction func bobaPressed(_ sender: Any) {

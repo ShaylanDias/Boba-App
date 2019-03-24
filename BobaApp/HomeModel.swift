@@ -12,6 +12,8 @@ protocol HomeModelDelegate {
     
     func itemsDownloaded(locations:[Location])
     
+    func locationDownloaded(location:Location)
+    
 }
 
 class HomeModel: NSObject {
@@ -20,24 +22,43 @@ class HomeModel: NSObject {
     
     func getLocation(_ address:String, _ name:String) {
         // Hit the web service URL
-        let serviceUrl = "http://bobaapp.com/select-locations.php?address=" + address + "&name=" + name
-        print(serviceUrl)
+        let locationURL = ("http://bobaapp.com/select-locations.php?address=" + address + "&name=" + name).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print(locationURL)
+        
+        let reviewURL = ("http://bobaapp.com/select-reviews.php?address=" + address).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         // Download the JSON data
-        let url = URL(string: serviceUrl)
+        let locationUrl = URL(string: locationURL)
+        let reviewUrl = URL(string: reviewURL)
         
-        if let url = url {
+        if let locUrl = locationUrl {
             // Create a URL Session
             let session = URLSession(configuration: .default)
             
-            let task = session.dataTask(with: url, completionHandler:
+            let task = session.dataTask(with: locUrl, completionHandler:
             {(data, response, error) in
-                if error == nil {
-                    // Successfully received data
-                    self.parseJson(data!)
-                }
-                else {
-                    // Error Occurred
+                    if error == nil {
+                        // Successfully received data
+                        let locArray =  self.parseJson(data!)
+                        let loc = locArray[0]
+                        // Starting to retrieve reviews
+                        if let revUrl = reviewUrl {
+                            let task2 = session.dataTask(with: revUrl, completionHandler:
+                            {(data2, response2, error2) in
+                                if error2 == nil {
+                                    // Successfully received data
+                                    loc.setReviews(reviews:self.parseReviews(data2!))
+                                    self.delegate?.locationDownloaded(location: loc)
+                                }
+                                else {
+                                    // Error Occurred
+                                }
+                            })
+                        task2.resume()
+                    }
+                    else {
+                        // Error Occurred
+                    }
                 }
             })
             
@@ -61,7 +82,8 @@ class HomeModel: NSObject {
             {(data, response, error) in
                 if error == nil {
                     // Successfully received data
-                    self.parseJson(data!)
+                    // Pass location array back to delegate
+                    self.delegate?.itemsDownloaded(locations: self.parseJson(data!))
                 }
                 else {
                     // Error Occurred
@@ -74,7 +96,28 @@ class HomeModel: NSObject {
 
     }
     
-    func parseJson(_ data:Data) {
+    func parseReviews(_ data:Data) -> [String]{
+        var revArray = [String]()
+        do {
+            let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as! [Any]
+            for jsonResult in jsonArray {
+                let jsonDict = jsonResult as! [String:String]
+                do {
+                    var review = jsonDict["review"]
+                    if(review == nil) {
+                        review = ""
+                    }
+                    revArray.append(review!)
+                }
+            }
+        }
+        catch {
+            print("Error With JSON Parse")
+        }
+        return revArray
+    }
+    
+    func parseJson(_ data:Data) -> [Location] {
         
         var locArray = [Location]()
         
@@ -101,15 +144,12 @@ class HomeModel: NSObject {
                 }
                 let loc = Location(name: locName!, address: locAddress!, upvotes: (locUpvotes)!, downvotes: (locDownvotes)!, reviews: [""])
                 locArray.append(loc)
-            }
-            
-            // Pass location array back to delegate
-            delegate?.itemsDownloaded(locations: locArray)
-            
+            }            
         }
         catch {
             print("Error With JSON Parse")
         }
+        return locArray
     }
     
 }
