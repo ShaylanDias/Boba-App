@@ -20,12 +20,12 @@ class PageViewController: UIPageViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var downvote: UIButton!
     @IBOutlet weak var voteDisplay: UILabel!
     
+
     let locationManager = CLLocationManager()
     var previousLocation = CLLocation(latitude: 37.331888, longitude: -122.029685)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = self.view
         upvote.setStyle()
         upvote.setStyle()
         toMap.setStyle()
@@ -53,8 +53,8 @@ class PageViewController: UIPageViewController, CLLocationManagerDelegate, MKMap
     
     @IBAction func upvotePressed(_ sender: Any) {
         print("Upvote pressed")
-//        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-//        upvoteButton.tintColor = self.view.tintColor
+        //        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        //        upvoteButton.tintColor = self.view.tintColor
     }
 
     override func didReceiveMemoryWarning() {

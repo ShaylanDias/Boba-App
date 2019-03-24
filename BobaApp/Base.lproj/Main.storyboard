@@ -10,113 +10,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="esb-ul-Fqy">
+        <!--Item-->
+        <scene sceneID="sHZ-bN-jFj">
             <objects>
-                <viewController storyboardIdentifier="locationViewController" id="w0U-Pr-LNt" customClass="PageViewController" customModule="BobaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="secondViewController" id="jex-g0-Ew8">
+                <viewController id="3fg-d1-OWh" customClass="PageViewController" customModule="BobaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8i5-4b-0O4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2I-dc-0J6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdZ-ZQ-31G">
+                                <rect key="frame" x="266" y="455" width="77" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exY-yb-0WO">
-                                        <rect key="frame" x="0.0" y="190" width="273" height="420"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9O-1n-pOl">
-                                                <rect key="frame" x="8" y="105" width="223" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xiw-Ly-oJX">
-                                                <rect key="frame" x="8" y="200" width="223" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y5-hL-NM1">
-                                                <rect key="frame" x="8" y="279" width="223" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aza-3G-QMn">
-                                                <rect key="frame" x="8" y="349" width="223" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="text1" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XXW-5B-4Wx">
-                                                <rect key="frame" x="8" y="35" width="223" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-6V-WGm">
-                                        <rect key="frame" x="297" y="540" width="58" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="map"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSK-ng-Sua">
-                                        <rect key="frame" x="297" y="305" width="58" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="downvote" backgroundImage="SushiIcon">
-                                            <color key="titleColor" red="0.9952579140663147" green="0.19953429698944092" blue="0.0045996634289622307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.99158412218093872" green="0.057146809995174408" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mq-OO-iE7">
-                                        <rect key="frame" x="306" y="280" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-os-7TI">
-                                        <rect key="frame" x="297" y="221" width="58" height="53"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="58" id="bJo-fK-htg"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="upvote"/>
-                                        <connections>
-                                            <action selector="upvotePressed:" destination="w0U-Pr-LNt" eventType="touchUpInside" id="OlH-sG-52w"/>
-                                        </connections>
-                                    </button>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Rb-bc-Qvh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </mapView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <state key="normal" title="Button" image="map"/>
+                                <connections>
+                                    <action selector="upvotePressed:" destination="3fg-d1-OWh" eventType="touchUpInside" id="yUv-nI-QSB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-pZ-GsD">
+                                <rect key="frame" x="266" y="327" width="77" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="downvote"/>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vhs-xn-bNJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtd-2e-4fp">
+                                <rect key="frame" x="283" y="310" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cav-CR-896">
+                                <rect key="frame" x="266" y="221" width="77" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="upvote"/>
+                                <connections>
+                                    <action selector="upvote:" destination="B3G-Qx-xnw" eventType="touchUpInside" id="n5b-EI-O3J"/>
+                                    <action selector="upvotePressed:" destination="B3G-Qx-xnw" eventType="touchUpInside" id="aex-MX-HMu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1Km-3M-oMu"/>
+                        <viewLayoutGuide key="safeArea" id="W1r-fz-GSA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Hbx-k5-sR2"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="R0R-FD-IHa"/>
                     <connections>
-                        <outlet property="downvote" destination="XSK-ng-Sua" id="kFe-ds-aS7"/>
-                        <outlet property="mapView" destination="3Rb-bc-Qvh" id="e7v-CL-INf"/>
-                        <outlet property="scrollView" destination="exY-yb-0WO" id="BNo-fg-azs"/>
-                        <outlet property="toMap" destination="ge4-6V-WGm" id="iul-tj-Lu2"/>
-                        <outlet property="upvote" destination="4pO-os-7TI" id="DBN-Cn-nia"/>
-                        <outlet property="voteDisplay" destination="9Mq-OO-iE7" id="nnm-7q-jdh"/>
+                        <outlet property="downvote" destination="UIX-pZ-GsD" id="eIA-5t-OqN"/>
+                        <outlet property="mapView" destination="Vhs-xn-bNJ" id="59O-DD-9aC"/>
+                        <outlet property="toMap" destination="TdZ-ZQ-31G" id="Jyo-g4-MCA"/>
+                        <outlet property="upvote" destination="Cav-CR-896" id="BCq-FO-8Mn"/>
+                        <outlet property="voteDisplay" destination="xtd-2e-4fp" id="Fa9-3n-Zxc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w4J-FB-pjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxt-7T-gSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B3G-Qx-xnw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-375.19999999999999" y="332.38380809595208"/>
+            <point key="canvasLocation" x="-591.20000000000005" y="279.31034482758622"/>
         </scene>
         <!--Map-->
         <scene sceneID="Jq3-ab-AKM">
@@ -217,7 +168,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="G0Y-E7-WzO" kind="relationship" relationship="viewControllers" id="O30-Am-YtT"/>
-                        <segue destination="w0U-Pr-LNt" kind="relationship" relationship="viewControllers" id="Fuc-fA-TVk"/>
+                        <segue destination="3fg-d1-OWh" kind="relationship" relationship="viewControllers" id="Y3V-hn-Ep3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eT9-n8-SER" userLabel="First Responder" sceneMemberID="firstResponder"/>
