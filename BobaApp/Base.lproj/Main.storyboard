@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Location-->
         <scene sceneID="sHZ-bN-jFj">
             <objects>
                 <viewController id="3fg-d1-OWh" customClass="LocationViewViewController" customModule="BobaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W1r-fz-GSA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="R0R-FD-IHa"/>
+                    <tabBarItem key="tabBarItem" title="Location" selectedImage="SmallBoba" id="R0R-FD-IHa"/>
                     <connections>
                         <outlet property="downvote" destination="UIX-pZ-GsD" id="LDa-VU-GTF"/>
                         <outlet property="mapView" destination="Vhs-xn-bNJ" id="59O-DD-9aC"/>
@@ -181,6 +181,7 @@
         <image name="BobaIcon" width="120" height="120"/>
         <image name="IceCreamIcon" width="120" height="120"/>
         <image name="PizzaIcon" width="120" height="120"/>
+        <image name="SmallBoba" width="40" height="40"/>
         <image name="SushiIcon" width="120" height="120"/>
         <image name="downvote" width="200" height="200"/>
         <image name="map" width="375" height="326"/>

@@ -153,8 +153,8 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
                 
                 if var region = self?.mapView.region {
                     region.center = location.coordinate
-                    region.span.longitudeDelta /= 300.0
-                    region.span.latitudeDelta /= 300.0
+                    region.span.longitudeDelta /= 270.0
+                    region.span.latitudeDelta /= 270.0
                     self?.mapView.setRegion(region, animated: true)
                     self?.mapView.addAnnotation(mark)
                 }
