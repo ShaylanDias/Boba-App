@@ -39,6 +39,14 @@ class Location : CustomStringConvertible {
         return self.name
     }
     
+    func incUpvotes() {
+        self.upvotes += 1
+    }
+    
+    func incDownvotes() {
+        self.downvotes += 1
+    }
+    
     func getUpvotes() -> Int {
         return self.upvotes
     }

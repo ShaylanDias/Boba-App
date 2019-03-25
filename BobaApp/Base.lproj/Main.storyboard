@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="sHZ-bN-jFj">
             <objects>
-                <viewController id="3fg-d1-OWh" customClass="PageViewController" customModule="BobaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3fg-d1-OWh" customClass="LocationViewViewController" customModule="BobaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8i5-4b-0O4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,49 +23,50 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="map"/>
                                 <connections>
-                                    <action selector="upvotePressed:" destination="3fg-d1-OWh" eventType="touchUpInside" id="yUv-nI-QSB"/>
+                                    <action selector="toMapPressed:" destination="3fg-d1-OWh" eventType="touchUpInside" id="KzF-lN-h3u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-pZ-GsD">
                                 <rect key="frame" x="266" y="327" width="77" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="downvote"/>
+                                <connections>
+                                    <action selector="downvotePressed:" destination="3fg-d1-OWh" eventType="touchUpInside" id="xuE-uf-lW0"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vhs-xn-bNJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtd-2e-4fp">
-                                <rect key="frame" x="283" y="310" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cav-CR-896">
                                 <rect key="frame" x="266" y="221" width="77" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="upvote"/>
                                 <connections>
-                                    <action selector="upvote:" destination="B3G-Qx-xnw" eventType="touchUpInside" id="n5b-EI-O3J"/>
-                                    <action selector="upvotePressed:" destination="B3G-Qx-xnw" eventType="touchUpInside" id="aex-MX-HMu"/>
+                                    <action selector="upvotePressed:" destination="3fg-d1-OWh" eventType="touchUpInside" id="dtF-xH-to1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtd-2e-4fp">
+                                <rect key="frame" x="267" y="302" width="76" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W1r-fz-GSA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="R0R-FD-IHa"/>
                     <connections>
-                        <outlet property="downvote" destination="UIX-pZ-GsD" id="eIA-5t-OqN"/>
+                        <outlet property="downvote" destination="UIX-pZ-GsD" id="LDa-VU-GTF"/>
                         <outlet property="mapView" destination="Vhs-xn-bNJ" id="59O-DD-9aC"/>
                         <outlet property="toMap" destination="TdZ-ZQ-31G" id="Jyo-g4-MCA"/>
-                        <outlet property="upvote" destination="Cav-CR-896" id="BCq-FO-8Mn"/>
-                        <outlet property="voteDisplay" destination="xtd-2e-4fp" id="Fa9-3n-Zxc"/>
+                        <outlet property="upvote" destination="Cav-CR-896" id="2Tf-Fm-7VJ"/>
+                        <outlet property="voteDisplay" destination="xtd-2e-4fp" id="AKG-aF-NYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxt-7T-gSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="B3G-Qx-xnw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-591.20000000000005" y="279.31034482758622"/>
         </scene>

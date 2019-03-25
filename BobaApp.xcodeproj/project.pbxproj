@@ -16,7 +16,7 @@
 		556F3FD421FD75E900C4E10A /* BobaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F3FD321FD75E900C4E10A /* BobaAppUITests.swift */; };
 		559A8A082244BD3F00802622 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A8A072244BD3F00802622 /* HomeModel.swift */; };
 		559A8A0A2244BD6800802622 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A8A092244BD6800802622 /* Location.swift */; };
-		55FD5C1A2233386400DDDA72 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD5C192233386400DDDA72 /* PageViewController.swift */; };
+		55E3478722484EB500915DB9 /* LocationViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3478622484EB500915DB9 /* LocationViewViewController.swift */; };
 		7BFBDAB622403BBA0085C414 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBDAB222403BBA0085C414 /* LICENSE */; };
 		7BFBDAB722403BBA0085C414 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFBDAB422403BBA0085C414 /* Popover.swift */; };
 		7BFBDAB822403BBA0085C414 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBDAB522403BBA0085C414 /* README.md */; };
@@ -55,7 +55,7 @@
 		556F3FD521FD75E900C4E10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559A8A072244BD3F00802622 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		559A8A092244BD6800802622 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		55FD5C192233386400DDDA72 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		55E3478622484EB500915DB9 /* LocationViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewViewController.swift; sourceTree = "<group>"; };
 		7BFBDAB222403BBA0085C414 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7BFBDAB422403BBA0085C414 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		7BFBDAB522403BBA0085C414 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -113,12 +113,12 @@
 				556F3FB321FD75E800C4E10A /* AppDelegate.swift */,
 				556F3FB521FD75E800C4E10A /* MapViewController.swift */,
 				556F3FB721FD75E800C4E10A /* Main.storyboard */,
-				55FD5C192233386400DDDA72 /* PageViewController.swift */,
 				556F3FBA21FD75E900C4E10A /* Assets.xcassets */,
 				556F3FBC21FD75E900C4E10A /* LaunchScreen.storyboard */,
 				556F3FBF21FD75E900C4E10A /* Info.plist */,
 				559A8A072244BD3F00802622 /* HomeModel.swift */,
 				559A8A092244BD6800802622 /* Location.swift */,
+				55E3478622484EB500915DB9 /* LocationViewViewController.swift */,
 			);
 			path = BobaApp;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55FD5C1A2233386400DDDA72 /* PageViewController.swift in Sources */,
+				55E3478722484EB500915DB9 /* LocationViewViewController.swift in Sources */,
 				556F3FB621FD75E800C4E10A /* MapViewController.swift in Sources */,
 				556F3FB421FD75E800C4E10A /* AppDelegate.swift in Sources */,
 				559A8A082244BD3F00802622 /* HomeModel.swift in Sources */,

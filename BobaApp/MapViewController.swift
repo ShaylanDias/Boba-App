@@ -23,7 +23,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     @IBOutlet weak var pizzaButton: UIButton!
     var currentCategory: String = "this_should_return_nothing"
     var currentLoc:Location = Location()
+    lazy var locView:LocationViewViewController = { tabBarController?.viewControllers![1] as? LocationViewViewController }()!
     
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -230,6 +234,9 @@ extension MapViewController: MKMapViewDelegate {
                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: item.placemark.coordinate, addressDictionary:nil))
                 mapItem.name = annoTitle
                 homeModel.getLocation(item.placemark.title!, item.placemark.name!)
+                if(locView.isViewLoaded) {
+                    locView.initializeForLocation(loc: currentLoc)
+                }
                 tabBarController?.selectedIndex = 1
 //                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
             }
