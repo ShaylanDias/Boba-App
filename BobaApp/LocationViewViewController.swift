@@ -16,12 +16,13 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var reviewText: UITextView!
     @IBOutlet weak var upvote: UIButton!
     @IBOutlet weak var downvote: UIButton!
     @IBOutlet weak var voteDisplay: UILabel!
     
     lazy var mapViewer:MapViewController = { tabBarController?.viewControllers![0] as? MapViewController }()!
-    
+
     let locationManager = CLLocationManager()
     var previousLocation = CLLocation(latitude: 37.331888, longitude: -122.029685)
     
@@ -54,6 +55,16 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
     
     override func viewWillAppear(_ animated: Bool) {
         initializeForLocation(loc:self.mapViewer.currentLoc)
+    }
+
+    func printReviews() {
+        reviewText.isEditable = false
+        let reviews = currentLoc.getReviews()
+        if reviews.count > 0 {
+            for review in reviews {
+                reviewText.text.append(review)
+            }
+        }
     }
     
     @IBAction func upvotePressed(_ sender: Any) {
