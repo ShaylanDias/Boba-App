@@ -21,6 +21,9 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var downvote: UIButton!
     @IBOutlet weak var voteDisplay: UILabel!
     
+    @IBOutlet weak var leaveAReviewLabel: UILabel!
+    @IBOutlet weak var leaveAReviewText: UITextView!
+    
     lazy var mapViewer:MapViewController = { tabBarController?.viewControllers![0] as? MapViewController }()!
 
     let locationManager = CLLocationManager()
@@ -32,6 +35,9 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         upvote.setStyle()
         toMap.setStyle()
         
+        leaveAReviewLabel.text = "Leave a Review:"
+        leaveAReviewText.text = ""
+        leaveAReviewText.isEditable = true
         mapView.setUserTrackingMode(MKUserTrackingMode.none, animated: true)
         
         self.locationManager.requestWhenInUseAuthorization()
@@ -59,11 +65,14 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
 
     func printReviews() {
         reviewText.isEditable = false
+        reviewText.text = "REVIEWS:"
         let reviews = currentLoc.getReviews()
         if reviews.count > 0 {
             for review in reviews {
-                reviewText.text.append(review)
+                reviewText.text.append("\n\n-" + review)
             }
+        } else {
+            reviewText.text = "No Reviews Yet."
         }
     }
     
@@ -175,6 +184,43 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
                 }
             }
         }
+        printReviews()
+    }
+    
+    @IBAction func syncReview(_ sender: Any) {
+        var text = ""
+        if(leaveAReviewText.text.count > 200) {
+            text = String(leaveAReviewText.text.prefix(200))
+        }
+        else {
+            text = leaveAReviewText.text
+        }
+        
+        let serviceUrl = ("http://bobaapp.com/add-review.php?address=" + currentLoc.address + "&review=" + text).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        // Download the JSON data
+        let url = URL(string: serviceUrl)
+        
+        if let url = url {
+            // Create a URL Session
+            let session = URLSession(configuration: .default)
+            
+            let task = session.dataTask(with: url, completionHandler:
+            {(data, response, error) in
+                if error == nil {
+                    // Successfully received data
+                    // Pass location array back to delegate
+                    self.currentLoc.incDownvotes()
+                }
+                else {
+                    // Error Occurred
+                }
+            })
+            
+            // Start the task
+            task.resume()
+        }
+        
+        leaveAReviewText.text = ""
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

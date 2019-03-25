@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdZ-ZQ-31G">
-                                <rect key="frame" x="266" y="455" width="77" height="81"/>
+                                <rect key="frame" x="266" y="455" width="77" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="map"/>
                                 <connections>
@@ -61,6 +61,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-F8-Vwm">
+                                <rect key="frame" x="19" y="537" width="229" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yML-lo-Lon">
+                                <rect key="frame" x="19" y="523" width="199" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcr-59-Twf">
+                                <rect key="frame" x="255" y="561" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sync Review">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="syncReview:" destination="3fg-d1-OWh" eventType="touchUpInside" id="sCx-zo-3rT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W1r-fz-GSA"/>
@@ -68,6 +93,8 @@
                     <tabBarItem key="tabBarItem" title="Location" selectedImage="SmallBoba" id="R0R-FD-IHa"/>
                     <connections>
                         <outlet property="downvote" destination="UIX-pZ-GsD" id="LDa-VU-GTF"/>
+                        <outlet property="leaveAReviewLabel" destination="yML-lo-Lon" id="o3e-jT-Ohm"/>
+                        <outlet property="leaveAReviewText" destination="i1z-F8-Vwm" id="P5h-Hx-Dxz"/>
                         <outlet property="mapView" destination="Vhs-xn-bNJ" id="59O-DD-9aC"/>
                         <outlet property="reviewText" destination="GOv-7e-njV" id="G1g-qe-Cs1"/>
                         <outlet property="toMap" destination="TdZ-ZQ-31G" id="Jyo-g4-MCA"/>
@@ -187,14 +214,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BobaIcon" width="120" height="120"/>
-        <image name="IceCreamIcon" width="120" height="120"/>
-        <image name="PizzaIcon" width="120" height="120"/>
-        <image name="SmallBoba" width="40" height="40"/>
-        <image name="SushiIcon" width="120" height="120"/>
+        <image name="BobaIcon" width="240" height="240"/>
+        <image name="IceCreamIcon" width="240" height="240"/>
+        <image name="PizzaIcon" width="240" height="240"/>
+        <image name="SmallBoba" width="120" height="120"/>
+        <image name="SushiIcon" width="240" height="240"/>
         <image name="downvote" width="200" height="200"/>
-        <image name="map" width="375" height="326"/>
-        <image name="map_pointer" width="32" height="32"/>
+        <image name="map" width="90" height="78.239997863769531"/>
+        <image name="map_pointer" width="48" height="48"/>
         <image name="upvote" width="200" height="200"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
