@@ -20,6 +20,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var downvote: UIButton!
     @IBOutlet weak var voteDisplay: UILabel!
     
+    lazy var mapViewer:MapViewController = { tabBarController?.viewControllers![0] as? MapViewController }()!
     
     let locationManager = CLLocationManager()
     var previousLocation = CLLocation(latitude: 37.331888, longitude: -122.029685)
@@ -41,8 +42,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         }
         mapView.delegate = self
         
-        initializeForLocation(loc: currentLoc)
-        
+        initializeForLocation(loc:self.mapViewer.currentLoc)
     }
     
     let regionRadius: CLLocationDistance = 1000
@@ -52,11 +52,15 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         //        mapView.setRegion(coordinateRegion, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        initializeForLocation(loc:self.mapViewer.currentLoc)
+    }
+    
     @IBAction func upvotePressed(_ sender: Any) {
         print("Upvote pressed")
         upvote.tintColor = self.view.tintColor
         // Hit the web service URL
-        let serviceUrl = ("http://bobaapp.com/vote-on-location.php?address=" + currentLoc.address + "&name=" + currentLoc.name + "&up=true").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let serviceUrl = ("http://bobaapp.com/vote-on-location.php?up=true&address=" + currentLoc.address + "&name=" + currentLoc.name).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         // Download the JSON data
         let url = URL(string: serviceUrl)
@@ -88,7 +92,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         print("Downvote pressed")
         downvote.tintColor = self.view.tintColor
         // Hit the web service URL
-        let serviceUrl = ("http://bobaapp.com/vote-on-location.php?address=" + currentLoc.address + "&name=" + currentLoc.name + "&up=false").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let serviceUrl = ("http://bobaapp.com/vote-on-location.php?&up=false&address=" + currentLoc.address + "&name=" + currentLoc.name ).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         // Download the JSON data
         let url = URL(string: serviceUrl)

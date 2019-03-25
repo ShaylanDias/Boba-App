@@ -25,10 +25,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
     var currentLoc:Location = Location()
     lazy var locView:LocationViewViewController = { tabBarController?.viewControllers![1] as? LocationViewViewController }()!
     
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +63,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, HomeModelD
         // Dispose of any resources that can be recreated.
     }
 
+    func setCurrentLocation(location:Location) {
+        currentLoc = location
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last! as CLLocation
         
@@ -234,6 +234,7 @@ extension MapViewController: MKMapViewDelegate {
                 let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: item.placemark.coordinate, addressDictionary:nil))
                 mapItem.name = annoTitle
                 homeModel.getLocation(item.placemark.title!, item.placemark.name!)
+                Thread.sleep(forTimeInterval: TimeInterval(1))
                 if(locView.isViewLoaded) {
                     locView.initializeForLocation(loc: currentLoc)
                 }
