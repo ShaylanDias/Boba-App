@@ -13,7 +13,7 @@ class Location : CustomStringConvertible {
     var address = ""
     var upvotes = 0
     var downvotes = 0
-    var reviews = ["Delicious snack like shaylan, good, bad, okay"]
+    var reviews = [""]
     
     init() {
         

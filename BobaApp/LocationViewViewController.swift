@@ -21,6 +21,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var downvote: UIButton!
     @IBOutlet weak var voteDisplay: UILabel!
     
+    @IBOutlet weak var locName: UILabel!
     @IBOutlet weak var leaveAReviewLabel: UILabel!
     @IBOutlet weak var leaveAReviewText: UITextView!
     
@@ -35,6 +36,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         upvote.setStyle()
         toMap.setStyle()
         
+        locName.text = ""
         leaveAReviewLabel.text = "Leave a Review:"
         leaveAReviewText.text = ""
         leaveAReviewText.isEditable = true
@@ -166,6 +168,12 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         // Dispose of any resources that can be recreated.
     }
     
+    func initializeLoading() {
+        locName.text = "Loading"
+        reviewText.text = ""
+        voteDisplay.text = "Loading"
+    }
+    
     func initializeForLocation(loc:Location) {
         currentLoc = loc
         voteDisplay.text = String(loc.getScore())
@@ -184,6 +192,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
                 }
             }
         }
+        locName.text = currentLoc.name
         printReviews()
     }
     
@@ -241,15 +250,4 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
 //        self.mapView.setRegion(region, animated: true)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
-
 }
