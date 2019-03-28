@@ -96,7 +96,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         upvote.tintColor = self.view.tintColor
         // Hit the web service URL
         let serviceUrl = ("http://bobaapp.com/upvote-location.php?address=" + currentLoc!.address + "&name=" + currentLoc!.name).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(serviceUrl)
         // Download the JSON data
         let url = URL(string: serviceUrl)
         
@@ -131,6 +131,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         downvote.tintColor = self.view.tintColor
         // Hit the web service URL
         let serviceUrl = ("http://bobaapp.com/downvote-location.php?address=" + currentLoc!.address + "&name=" + currentLoc!.name ).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print(serviceUrl)
         
         // Download the JSON data
         let url = URL(string: serviceUrl)
@@ -195,6 +196,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
             return
         }
         currentLoc = loc
+        print(currentLoc)
         voteDisplay.text = String(loc.getScore())
         let address = loc.getAddress()
         let geocoder = CLGeocoder()
@@ -280,7 +282,7 @@ class LocationViewViewController: UIViewController, CLLocationManagerDelegate, M
         print(locationURL)
         
         let reviewURL = ("http://bobaapp.com/select-reviews.php?address=" + address).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(reviewURL)
         // Download the JSON data
         let locationUrl = URL(string: locationURL)
         let reviewUrl = URL(string: reviewURL)
