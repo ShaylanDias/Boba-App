@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BobaApp/LocationViewViewController.swift"
-            timestampString = "575309859.939775"
+            timestampString = "575445354.670419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "initializeLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BobaApp/LocationViewViewController.swift"
-            timestampString = "575309859.940249"
+            timestampString = "575445354.671348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "printReviews()"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "initializeForLocation(loc:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
